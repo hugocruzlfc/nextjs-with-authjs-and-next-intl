@@ -14,6 +14,7 @@
     },
 
     "links": {
+      "brand": "Nextjs con Next-Intl y Authjs",
       "home": "Inicio",
       "about": "Acerca de",
       "login": "Iniciar sesión"
