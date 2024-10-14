@@ -24,10 +24,28 @@
     "metadata": {
       "title": "Inicio",
       "siteName": "Next-Tutorial"
+    },
+    "welcome": "Bienvenido",
+    "welcomeMessage": "Iniciado sesión como",
+    "notSigned": "No ha iniciado sesión",
+    "info": "Por favor, navegue a la página de inicio de sesión e inicie sesión para mostrar la información del perfil de Github!"
+  },
+  "AboutPage": {
+    "metadata": {
+      "title": "Acerca de"
+    },
+    "tags": {
+      "1": "Esta es una manera simple de integrar next-intl y authjs (anteriormente conocido como next-auth) en Nextjs.",
+      "2": "Ten en cuenta que la documentación actual de next-intl y los ejemplos son para la versión 4 de next-auth, de ahí la necesidad de tener este tutorial a mano.",
+      "3": "Asegúrate de consultar la documentación oficial de ambas bibliotecas.",
+      "4": "¡Buena suerte 🦾 !"
     }
   },
-  "AboutPage": {},
-  "LoginPage": {},
+  "LoginPage": {
+    "metadata": {
+      "title": "Inicio de sesión"
+    }
+  },
   "Error": {
     "description": "<p>Lamentablemente hemos encontrado un error.</p><p>Puede intentar <retry>recargar la página</retry> que estabas visitando.</p>",
     "title": "¡Algo salió mal!"
@@ -35,5 +53,10 @@
   "NotFound": {
     "title": "No encontrado",
     "description": "Lo sentimos, la página que busca no existe."
+  },
+  "Session": {
+    "login": "Iniciar sesión con Github",
+    "logout": "Cerrar sesión",
+    "profile": "Perfil"
   }
 }

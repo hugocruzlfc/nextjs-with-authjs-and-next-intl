@@ -1,4 +1,5 @@
 import Navbar from "@/components/navigation/Navbar";
+import { Providers } from "@/components/Providers";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import {
@@ -64,8 +65,10 @@ export default async function LocaleLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          {children}
+          <Providers>
+            <Navbar />
+            {children}
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
