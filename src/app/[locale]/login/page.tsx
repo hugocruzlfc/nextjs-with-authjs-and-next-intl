@@ -17,5 +17,11 @@ export async function generateMetadata({ params: { locale } }: Props) {
 }
 
 export default function LoginPage() {
-  return <Login />;
+  return (
+    <section className="p-10">
+      <div className="flex w-full flex-col items-center space-y-5">
+        <Login />
+      </div>
+    </section>
+  );
 }
