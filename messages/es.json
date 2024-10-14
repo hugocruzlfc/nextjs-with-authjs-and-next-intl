@@ -1,0 +1,38 @@
+{
+  "LocaleLayout": {
+    "siteName": "Next-Tutorial",
+    "description": "Este es un ejemplo simple de un sitio web multilingüe. Estamos utilizando la biblioteca next-intl para administrar las traducciones en unión con authjs para la autenticación.",
+    "openGraph": {
+      "title": "Tutorial de integración",
+      "description": "Este es un ejemplo simple de un sitio web multilingüe. Estamos utilizando la biblioteca next-intl para administrar las traducciones en unión con authjs para la autenticación."
+    }
+  },
+  "Navbar": {
+    "switcherLocale": {
+      "label": "Cambiar idioma",
+      "locale": "{locale, select, es {🇪🇸 Español} en {🇺🇸 Inglés} other {Unknown}}"
+    },
+
+    "links": {
+      "home": "Inicio",
+      "about": "Acerca de",
+      "login": "Iniciar sesión"
+    }
+  },
+  "HomePage": {
+    "metadata": {
+      "title": "Inicio",
+      "siteName": "Next-Tutorial"
+    }
+  },
+  "AboutPage": {},
+  "LoginPage": {},
+  "Error": {
+    "description": "<p>Lamentablemente hemos encontrado un error.</p><p>Puede intentar <retry>recargar la página</retry> que estabas visitando.</p>",
+    "title": "¡Algo salió mal!"
+  },
+  "NotFound": {
+    "title": "No encontrado",
+    "description": "Lo sentimos, la página que busca no existe."
+  }
+}
