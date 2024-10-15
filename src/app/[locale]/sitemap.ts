@@ -1,3 +1,4 @@
+import { locales, pathnames } from "@/i18n/routing";
 import { MetadataRoute } from "next";
 
 type Route = {
@@ -9,36 +10,26 @@ const baseUrl = process.env.NEXT_PUBLIC_URL;
 
 export const dynamic = "force-dynamic";
 
-// export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-//   const routesMap: Route[] = [
-//     { url: `${baseUrl}/`, lastModified: new Date().toISOString() },
-//     { url: `${baseUrl}/booking`, lastModified: new Date().toISOString() },
-//   ];
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const routesMap: Route[] = [];
 
-//   const carsFromDb = await prisma.car.findMany({
-//     select: { slug: true, updatedAt: true },
-//   });
+  (Object.keys(pathnames) as Array<keyof typeof pathnames>).forEach(
+    (pathname) => {
+      locales.forEach((locale) => {
+        const localizedPath = pathnames[pathname];
 
-//   const coverageCollection = carsFromDb.map((car) => ({
-//     url: `${baseUrl}/booking/${car.slug}`,
-//     lastModified: car.updatedAt.toISOString(),
-//   }));
+        const localizedUrl =
+          typeof localizedPath === "string"
+            ? localizedPath
+            : localizedPath[locale];
 
-//   const carsCollection = carsFromDb.map((car) => ({
-//     url: `${baseUrl}/cars/${car.slug}`,
-//     lastModified: car.updatedAt.toISOString(),
-//   }));
+        routesMap.push({
+          url: `${baseUrl}/${locale}${localizedUrl}`,
+          lastModified: new Date().toISOString(),
+        });
+      });
+    },
+  );
 
-//   const carsCategories = Object.values(CarCategory).map((category) => ({
-//     url: `${baseUrl}/cars/category/${category}`,
-//     lastModified: new Date().toISOString(),
-//   }));
-
-//   const fetchedRoutes: Route[] = [
-//     ...coverageCollection,
-//     ...carsCollection,
-//     ...carsCategories,
-//   ];
-
-//   return [...routesMap, ...fetchedRoutes];
-// }
+  return routesMap;
+}

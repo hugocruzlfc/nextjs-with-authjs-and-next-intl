@@ -27,8 +27,6 @@ export default async function Home({ params: { locale } }: Props) {
 
   const session = await auth();
 
-  console.log(session);
-
   // checking if sessions exists
   if (session) {
     // rendering components for logged in users
